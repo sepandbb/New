@@ -44,20 +44,17 @@ public class passwordChecker {
             System.out.println("Correct password entered");
             System.exit(1);
         }
+        else if (i != 0)
+        {
+            System.out.println("Try again..." + i + " attempt/s remaining.");
+            Stack<String> incorrectPass = new Stack<>();
+            incorrectPass.push(passEntered);
+            System.out.println("Incorrect passwords entered: " + incorrectPass);
+        }
         else
         {
-            if (i != 0)
-            {
-                System.out.println("Try again..." + i + " attempt/s remaining.");
-                Stack<String> incorrectPass = new Stack<>();
-                incorrectPass.push(passEntered);
-                System.out.println("Incorrect passwords entered: " + incorrectPass);
-            }
-            else
-            {
-                System.out.println("No attempts remaining");
-                System.exit(1);
-            }
+            System.out.println("No attempts remaining");
+            System.exit(1);
         }
     }
 }
